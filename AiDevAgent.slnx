@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AiDevAgent.Agents/AiDevAgent.Agents.csproj" />
+    <Project Path="src/AiDevAgent.Api/AiDevAgent.Api.csproj" />
+    <Project Path="src/AiDevAgent.Application/AiDevAgent.Application.csproj" />
+    <Project Path="src/AiDevAgent.Domain/AiDevAgent.Domain.csproj" />
+    <Project Path="src/AiDevAgent.Infrastructure/AiDevAgent.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AiDevAgent.Application.Tests/AiDevAgent.Application.Tests.csproj" />
+    <Project Path="tests/AiDevAgent.Domain.Tests/AiDevAgent.Domain.Tests.csproj" />
+    <Project Path="tests/AiDevAgent.Integration.Tests/AiDevAgent.Integration.Tests.csproj" />
+  </Folder>
+</Solution>

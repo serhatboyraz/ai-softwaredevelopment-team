@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1040" role="img" aria-labelledby="title desc">
+  <title id="title">AiDevAgent production infrastructure</title>
+  <desc id="desc">User and React dashboard connect over REST and SignalR to an ASP.NET Core API on Azure Container Apps. The API enqueues work on Azure Service Bus. A background worker runs Microsoft Agent Framework with Context, Analysis, Development, Testing, and Git agents. Agents use Azure OpenAI, PostgreSQL, a Docker sandbox, and GitLab. Secrets come from Azure Key Vault via Microsoft Entra ID managed identity. Telemetry flows through OpenTelemetry to Application Insights. Images are stored in Azure Container Registry.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5A6A7A"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0078D4"/>
+    </marker>
+    <filter id="card" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="1" stdDeviation="0" flood-color="#0B1F3A" flood-opacity="0"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1040" fill="#F4F7FB"/>
+
+  <text x="800" y="42" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="26" font-weight="700" fill="#0B1F3A">AiDevAgent  Production Infrastructure</text>
+  <text x="800" y="68" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="14" fill="#5A6A7A">AI software development execution platform · Azure · GitLab · isolated sandbox</text>
+
+  <!-- User -->
+  <rect x="680" y="88" width="240" height="50" rx="8" fill="#0B1F3A"/>
+  <text x="800" y="119" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">User / Browser</text>
+
+  <line x1="800" y1="138" x2="800" y2="164" stroke="#5A6A7A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="818" y="156" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" fill="#5A6A7A">HTTPS</text>
+
+  <!-- Frontend -->
+  <rect x="610" y="166" width="380" height="64" rx="8" fill="#FFFFFF" stroke="#0078D4" stroke-width="1.6"/>
+  <text x="800" y="192" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0B1F3A">React + TypeScript Dashboard</text>
+  <text x="800" y="214" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12" fill="#5A6A7A">Vite · TanStack Query · SignalR · Tailwind · Azure Static Web Apps / Container Apps</text>
+
+  <line x1="800" y1="230" x2="800" y2="262" stroke="#0078D4" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+  <text x="814" y="250" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#0078D4">REST / SignalR</text>
+
+  <!-- Azure Container Apps -->
+  <rect x="48" y="266" width="1504" height="428" rx="14" fill="#E8F4FC" stroke="#0078D4" stroke-width="1.6"/>
+  <text x="68" y="292" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#0078D4">AZURE CONTAINER APPS</text>
+
+  <!-- API -->
+  <rect x="80" y="314" width="340" height="96" rx="10" fill="#0078D4"/>
+  <text x="250" y="352" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">ASP.NET Core API</text>
+  <text x="250" y="376" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12" fill="#D6EBFA">Control plane · OpenAPI · CORS</text>
+  <text x="250" y="394" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" fill="#D6EBFA">Creates workflow, returns 202 immediately</text>
+
+  <!-- Service Bus -->
+  <rect x="500" y="332" width="280" height="60" rx="10" fill="#FFFFFF" stroke="#00A2ED" stroke-width="1.6"/>
+  <text x="640" y="356" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#0B1F3A">Azure Service Bus</text>
+  <text x="640" y="376" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" fill="#5A6A7A">Production queue · MVP: in-process channel</text>
+
+  <!-- Worker -->
+  <rect x="860" y="314" width="360" height="96" rx="10" fill="#0B1F3A"/>
+  <text x="1040" y="352" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">Background Worker</text>
+  <text x="1040" y="376" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12" fill="#C5D4E4">Workflow executor · checkpoints · cancellation</text>
+  <text x="1040" y="394" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" fill="#C5D4E4">Does not run inside HTTP request lifetimes</text>
+
+  <line x1="420" y1="362" x2="498" y2="362" stroke="#0078D4" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+  <line x1="780" y1="362" x2="858" y2="362" stroke="#0078D4" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+
+  <!-- ACR note -->
+  <rect x="1260" y="328" width="260" height="68" rx="8" fill="#FFFFFF" stroke="#5A6A7A" stroke-width="1.2"/>
+  <text x="1390" y="356" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#0B1F3A">Azure Container Registry</text>
+  <text x="1390" y="376" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" fill="#5A6A7A">API, worker, and sandbox images</text>
+
+  <!-- Agent Framework -->
+  <rect x="80" y="436" width="1440" height="232" rx="10" fill="#FFFFFF" stroke="#5C2D91" stroke-width="1.5"/>
+  <text x="100" y="462" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#5C2D91">MICROSOFT AGENT FRAMEWORK</text>
+  <text x="1520" y="462" text-anchor="end" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" fill="#5A6A7A">IChatClient abstraction · typed workflow · HITL · owned runtime (not Foundry Agent Service)</text>
+
+  <!-- Five agents -->
+  <g font-family="Segoe UI, Inter, system-ui, sans-serif">
+    <rect x="104" y="484" width="256" height="152" rx="8" fill="#F4F7FB" stroke="#0078D4" stroke-width="1.4"/>
+    <rect x="104" y="484" width="8" height="152" rx="2" fill="#0078D4"/>
+    <text x="232" y="524" text-anchor="middle" font-size="15" font-weight="700" fill="#0B1F3A">Context Agent</text>
+    <text x="232" y="548" text-anchor="middle" font-size="12" fill="#5A6A7A">Enough information?</text>
+    <text x="232" y="570" text-anchor="middle" font-size="11" fill="#5A6A7A">Repo structure · project type</text>
+    <text x="232" y="606" text-anchor="middle" font-size="11" font-weight="600" fill="#0078D4">Ready or wait</text>
+
+    <rect x="384" y="484" width="256" height="152" rx="8" fill="#F4F7FB" stroke="#5C2D91" stroke-width="1.4"/>
+    <rect x="384" y="484" width="8" height="152" rx="2" fill="#5C2D91"/>
+    <text x="512" y="524" text-anchor="middle" font-size="15" font-weight="700" fill="#0B1F3A">Analysis Agent</text>
+    <text x="512" y="548" text-anchor="middle" font-size="12" fill="#5A6A7A">Plan before changing code</text>
+    <text x="512" y="570" text-anchor="middle" font-size="11" fill="#5A6A7A">Files · steps · risks · tests</text>
+    <text x="512" y="606" text-anchor="middle" font-size="11" font-weight="600" fill="#5C2D91">Implementation plan</text>
+
+    <rect x="664" y="484" width="256" height="152" rx="8" fill="#F4F7FB" stroke="#107C10" stroke-width="1.4"/>
+    <rect x="664" y="484" width="8" height="152" rx="2" fill="#107C10"/>
+    <text x="792" y="524" text-anchor="middle" font-size="15" font-weight="700" fill="#0B1F3A">Development Agent</text>
+    <text x="792" y="548" text-anchor="middle" font-size="12" fill="#5A6A7A">Controlled write tools</text>
+    <text x="792" y="570" text-anchor="middle" font-size="11" fill="#5A6A7A">Workspace only · focused diffs</text>
+    <text x="792" y="606" text-anchor="middle" font-size="11" font-weight="600" fill="#107C10">Code changes</text>
+
+    <rect x="944" y="484" width="256" height="152" rx="8" fill="#F4F7FB" stroke="#D83B01" stroke-width="1.4"/>
+    <rect x="944" y="484" width="8" height="152" rx="2" fill="#D83B01"/>
+    <text x="1072" y="524" text-anchor="middle" font-size="15" font-weight="700" fill="#0B1F3A">Testing Agent</text>
+    <text x="1072" y="548" text-anchor="middle" font-size="12" fill="#5A6A7A">Sandbox is authoritative</text>
+    <text x="1072" y="570" text-anchor="middle" font-size="11" fill="#5A6A7A">Build · test · bounded fix loop</text>
+    <text x="1072" y="606" text-anchor="middle" font-size="11" font-weight="600" fill="#D83B01">Pass / repair d 3</text>
+
+    <rect x="1224" y="484" width="256" height="152" rx="8" fill="#F4F7FB" stroke="#FC6D26" stroke-width="1.4"/>
+    <rect x="1224" y="484" width="8" height="152" rx="2" fill="#FC6D26"/>
+    <text x="1352" y="524" text-anchor="middle" font-size="15" font-weight="700" fill="#0B1F3A">Git Agent</text>
+    <text x="1352" y="548" text-anchor="middle" font-size="12" fill="#5A6A7A">Branch · commit · push · MR</text>
+    <text x="1352" y="570" text-anchor="middle" font-size="11" fill="#5A6A7A">ai/task-{id}-{slug}</text>
+    <text x="1352" y="606" text-anchor="middle" font-size="11" font-weight="600" fill="#FC6D26">No auto-merge</text>
+  </g>
+
+  <!-- Platform services -->
+  <rect x="48" y="716" width="1504" height="248" rx="14" fill="#FFFFFF" stroke="#C5D0DC" stroke-width="1.4"/>
+  <text x="68" y="742" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#5A6A7A">PLATFORM SERVICES</text>
+  <text x="1532" y="742" text-anchor="end" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" fill="#5A6A7A">Managed identity ’ Key Vault · secrets never enter prompts, logs, or the frontend</text>
+
+  <g font-family="Segoe UI, Inter, system-ui, sans-serif">
+    <rect x="72" y="760" width="352" height="80" rx="8" fill="#F6F0FF" stroke="#7C3AED" stroke-width="1.3"/>
+    <text x="248" y="792" text-anchor="middle" font-size="15" font-weight="700" fill="#3B1A78">Azure OpenAI</text>
+    <text x="248" y="814" text-anchor="middle" font-size="11" fill="#5A6A7A">IChatClient · replaceable provider</text>
+
+    <rect x="440" y="760" width="352" height="80" rx="8" fill="#EEF6FB" stroke="#336791" stroke-width="1.3"/>
+    <text x="616" y="792" text-anchor="middle" font-size="15" font-weight="700" fill="#234A68">PostgreSQL</text>
+    <text x="616" y="814" text-anchor="middle" font-size="11" fill="#5A6A7A">Authoritative workflow state · EF Core</text>
+
+    <rect x="808" y="760" width="352" height="80" rx="8" fill="#FFF4EE" stroke="#D83B01" stroke-width="1.3"/>
+    <text x="984" y="792" text-anchor="middle" font-size="15" font-weight="700" fill="#9A2A00">Docker Sandbox</text>
+    <text x="984" y="814" text-anchor="middle" font-size="11" fill="#5A6A7A">Isolated build/test · limits · non-root</text>
+
+    <rect x="1176" y="760" width="352" height="80" rx="8" fill="#FFF5F0" stroke="#FC6D26" stroke-width="1.3"/>
+    <text x="1352" y="792" text-anchor="middle" font-size="15" font-weight="700" fill="#C24B12">GitLab</text>
+    <text x="1352" y="814" text-anchor="middle" font-size="11" fill="#5A6A7A">API for MRs · Git CLI for clone/push</text>
+
+    <rect x="72" y="856" width="352" height="80" rx="8" fill="#F3F6F9" stroke="#0B1F3A" stroke-width="1.3"/>
+    <text x="248" y="888" text-anchor="middle" font-size="15" font-weight="700" fill="#0B1F3A">Azure Key Vault</text>
+    <text x="248" y="910" text-anchor="middle" font-size="11" fill="#5A6A7A">GitLab, AOAI, DB, webhook secrets</text>
+
+    <rect x="440" y="856" width="352" height="80" rx="8" fill="#E8F4FC" stroke="#0078D4" stroke-width="1.3"/>
+    <text x="616" y="888" text-anchor="middle" font-size="15" font-weight="700" fill="#004E8C">Microsoft Entra ID</text>
+    <text x="616" y="910" text-anchor="middle" font-size="11" fill="#5A6A7A">Managed identity to Key Vault</text>
+
+    <rect x="808" y="856" width="352" height="80" rx="8" fill="#EAF8F9" stroke="#00B7C3" stroke-width="1.3"/>
+    <text x="984" y="888" text-anchor="middle" font-size="15" font-weight="700" fill="#0B6E75">Application Insights</text>
+    <text x="984" y="910" text-anchor="middle" font-size="11" fill="#5A6A7A">OpenTelemetry exporter · traces/metrics</text>
+
+    <rect x="1176" y="856" width="352" height="80" rx="8" fill="#F4F7FB" stroke="#5A6A7A" stroke-width="1.3"/>
+    <text x="1352" y="888" text-anchor="middle" font-size="15" font-weight="700" fill="#0B1F3A">SignalR + correlation</text>
+    <text x="1352" y="910" text-anchor="middle" font-size="11" fill="#5A6A7A">Live UI · PostgreSQL remains source of truth</text>
+  </g>
+
+  <text x="800" y="1016" text-anchor="middle" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12" fill="#5A6A7A">The LLM provides reasoning; the platform provides control. Domain does not depend on Azure OpenAI, GitLab, Docker, EF Core, or ASP.NET Core.</text>
+</svg>

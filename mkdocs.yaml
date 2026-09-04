@@ -1,0 +1,92 @@
+site_name: AiDevAgent
+site_description: AI software development execution platform — architecture and implementation docs
+site_author: AiDevAgent
+docs_dir: docs
+site_dir: site
+
+nav:
+  - Home: index.md
+  - Overview: 01-overview.md
+  - Architecture:
+      - High-level: 02-architecture.md
+      - Infrastructure: infrastructure.md
+      - Agents: 03-agents.md
+      - Workflow: 04-workflow.md
+      - Tools and sandbox: 05-tools-and-sandbox.md
+  - Platform:
+      - API: 06-api.md
+      - Security: 07-security.md
+      - Frontend: 08-frontend.md
+      - Data model: 09-data-model.md
+  - Delivery:
+      - MVP: 10-mvp.md
+      - Decisions: 11-decisions.md
+      - Task list: TASKS.md
+
+theme:
+  name: material
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+  social: []
+
+extra_css:
+  - stylesheets/extra.css

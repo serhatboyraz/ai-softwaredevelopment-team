@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0f1419;
+  --surface: #1a222c;
+  --border: #2a3542;
+  --text: #e8eef4;
+  --muted: #8b9aab;
+  --accent: #3d9b7a;
+  --warn: #c4a35a;
+  --info: #5a8fc4;
+  --danger: #c45c5c;
+}
+
+@keyframes wf-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(196, 163, 90, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(196, 163, 90, 0);
+  }
+}
+
+.wf-running {
+  animation: wf-pulse 1.8s ease-in-out infinite;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% -10%, #1a2f28 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, #1a2433 0%, transparent 50%),
+    var(--bg);
+  color: var(--text);
+}
+
+.mono {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
